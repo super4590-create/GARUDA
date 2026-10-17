@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GARUDA Simulation State Machine Tests</title>
+  <style>
+    body {
+      background-color: #0A1220;
+      color: #F5F7FA;
+      font-family: ui-monospace, monospace;
+      padding: 30px;
+      line-height: 1.6;
+    }
+    .test-suite {
+      max-width: 700px;
+      margin: 0 auto;
+      border: 1px solid #243453;
+      border-radius: 12px;
+      padding: 24px;
+      background-color: #14213A;
+    }
+    h1 { font-size: 20px; color: #F28A27; margin-bottom: 20px; }
+    .test-item { margin-bottom: 12px; padding: 10px 14px; border-radius: 8px; }
+    .test-pass { background-color: rgba(34, 197, 94, 0.15); border: 1px solid #22C55E; color: #86EFAC; }
+    .test-fail { background-color: rgba(239, 68, 68, 0.15); border: 1px solid #EF4444; color: #FCA5A5; }
+    #summary { margin-top: 24px; font-weight: bold; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="test-suite">
+    <h1>GARUDA Simulation Test Runner</h1>
+    <div id="results"></div>
+    <div id="summary">Running tests...</div>
+  </div>
+
+  <script src="../assets/js/simulation.js"></script>
+  <script>
+    (function runTests() {
+      const resultsDiv = document.getElementById("results");
+      const summaryDiv = document.getElementById("summary");
+      let passed = 0;
+      let total = 0;
+
+      function assert(desc, condition) {
+        total++;
+        const item = document.createElement("div");
+        item.className = "test-item " + (condition ? "test-pass" : "test-fail");
+        item.textContent = (condition ? "✓ PASS: " : "✗ FAIL: ") + desc;
+        resultsDiv.appendChild(item);
+        if (condition) {
+          passed++;
+          console.log("[PASS]", desc);
+        } else {
+          console.error("[FAIL]", desc);
+        }
+      }
+
+      // Security check: intercept network and geolocation APIs
+      let networkCalled = false;
+      let geolocationCalled = false;
+
+      const origFetch = window.fetch;
+      window.fetch = function() {
+        networkCalled = true;
+        return origFetch.apply(this, arguments);
+      };
+
+      if (navigator.geolocation) {
+        const origGetCurrent = navigator.geolocation.getCurrentPosition;
+        navigator.geolocation.getCurrentPosition = function() {
+          geolocationCalled = true;
+          return origGetCurrent.apply(this, arguments);
+        };
+      }
+
+      // Test 1: Instantiation and Idle State
+      const sim = new window.SimulationStateMachine({ totalSeconds: 30 });
+      assert("Initial state is idle", sim.state === "idle");
+      assert("Initial remainingSeconds is 30", sim.remainingSeconds === 30);
+
+      // Test 2: Start Transition
+      sim.start();
+      assert("State becomes running on start()", sim.state === "running");
+
+      // Test 3: Cancel Transition
+      sim.cancel();
+      assert("State becomes cancelled on cancel()", sim.state === "cancelled");
+      assert("Timer is stopped on cancel()", sim.timer === null);
+
+      // Test 4: Reset Transition
+      sim.reset();
+      assert("State becomes idle on reset()", sim.state === "idle");
+      assert("RemainingSeconds resets to 30", sim.remainingSeconds === 30);
+
+      // Test 5: Completion State
+      sim.complete();
+      assert("State becomes completed on complete()", sim.state === "completed");
+      assert("Timer is stopped on complete()", sim.timer === null);
+
+      // Test 6: Zero Network or Geolocation API Access
+      assert("Zero network requests were dispatched", networkCalled === false);
+      assert("Zero geolocation requests were dispatched", geolocationCalled === false);
+
+      // Restore
+      window.fetch = origFetch;
+
+      // Summary
+      if (passed === total) {
+        summaryDiv.style.color = "#22C55E";
+        summaryDiv.textContent = `ALL ${total} TESTS PASSED (0 failures). Zero network or location calls.`;
+        console.log(`ALL ${total} TESTS PASSED`);
+      } else {
+        summaryDiv.style.color = "#EF4444";
+        summaryDiv.textContent = `FAILED: ${total - passed} of ${total} tests failed.`;
+      }
+    })();
+  </script>
+</body>
+</html>

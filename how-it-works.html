@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101B2B">
+  <meta name="description" content="How GARUDA Works: Incident detection sequence, 30-second cancellation window, simulation demo, and honest testing status.">
+  <title>How GARUDA Works & Incident Simulation | Angiras Industries</title>
+  <link rel="canonical" href="https://YOUR-DOMAIN-HERE/how-it-works.html">
+  <meta property="og:title" content="How GARUDA Works & Incident Simulation | Angiras Industries">
+  <meta property="og:description" content="Explore the Detect-Check-SOS sequence, interactive browser simulation, and testing progress with 5 beta riders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN-HERE/how-it-works.html">
+  <meta property="og:image" content="assets/images/garuda-prototype-testing.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How GARUDA Works | Angiras Industries">
+  <meta name="twitter:description" content="Explore the Detect-Check-SOS sequence and interactive browser simulation.">
+  <meta name="twitter:image" content="assets/images/garuda-prototype-testing.webp">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="GARUDA Home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-text">
+          <span class="brand-name">GARUDA</span>
+          <span class="brand-sub">BY ANGIRAS INDUSTRIES</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products/garuda.html" class="nav-link">Product</a>
+        <a href="how-it-works.html" class="nav-link active">How It Works</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="waitlist.html" class="btn btn-primary btn-sm">Take the rider survey</a>
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="products/garuda.html" class="mobile-nav-link">Product Overview</a>
+      <a href="how-it-works.html" class="mobile-nav-link active">How It Works & Simulation</a>
+      <a href="about.html" class="mobile-nav-link">About Angiras Industries</a>
+      <a href="contact.html" class="mobile-nav-link">Commercial & Pilot Enquiries</a>
+      <a href="waitlist.html" class="mobile-nav-link" style="color: var(--color-orange);">Take the rider survey ↗</a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero / Intro -->
+    <section class="section hud-grid" style="padding-top: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--color-navy-border);">
+      <div class="container">
+        <div class="section-kicker">Architecture & Logic</div>
+        <h1 class="section-title" style="margin-bottom: 16px;">The Incident Response Sequence</h1>
+        <p class="section-desc" style="max-width: 640px;">
+          GARUDA pairs physical headgear with motion-aware electronics. When severe road dynamics occur, the system initiates a structured sequence designed around human confirmation before any notification is prepared.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3-Node Animated Workflow Component -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Three-Stage Flow</span>
+          <h2 class="section-title">Detect · Check · SOS</h2>
+          <p class="section-desc">
+            A continuous safety loop. Hover or focus any step to pause the visualization.
+          </p>
+        </div>
+
+        <div class="workflow-flow reveal" aria-label="Incident response flow visualization">
+          <!-- Desktop Track & Traveling Pulse -->
+          <div class="workflow-track-wrapper" aria-hidden="true">
+            <div class="workflow-pulse"></div>
+          </div>
+
+          <div class="workflow-nodes">
+            <!-- Node 1: Detect -->
+            <div class="workflow-node" tabindex="0" aria-label="Stage 1: Detect">
+              <div class="workflow-node-header">
+                <span class="workflow-node-num">01</span>
+                <span class="badge badge-target">Design target</span>
+              </div>
+              <h3 class="card-title">1. Detect</h3>
+              <p class="card-desc">
+                Onboard sensors evaluate acceleration and tilt angles. A tilt exceeding 50 degrees paired with severe vibration triggers the sequence.
+              </p>
+              <div style="margin-top: 16px; font-size: 11px; font-family: var(--font-mono); color: var(--color-slate);">
+                PROVISIONAL DUAL-TRIGGER
+              </div>
+            </div>
+
+            <!-- Node 2: Check -->
+            <div class="workflow-node" tabindex="0" aria-label="Stage 2: Check">
+              <div class="workflow-node-header">
+                <span class="workflow-node-num">02</span>
+                <span class="badge badge-target">Design target</span>
+              </div>
+              <h3 class="card-title">2. Check</h3>
+              <p class="card-desc">
+                The device sounds an immediate alert. A 30-second cancellation window gives the rider full agency to cancel the alarm with one button press.
+              </p>
+              <div style="margin-top: 16px; font-size: 11px; font-family: var(--font-mono); color: var(--color-slate);">
+                30-SECOND WINDOW
+              </div>
+            </div>
+
+            <!-- Node 3: SOS -->
+            <div class="workflow-node" tabindex="0" aria-label="Stage 3: SOS">
+              <div class="workflow-node-header">
+                <span class="workflow-node-num">03</span>
+                <span class="badge badge-tbc">To be confirmed</span>
+              </div>
+              <h3 class="card-title">3. SOS Workflow</h3>
+              <p class="card-desc">
+                If the rider does not cancel within 30 seconds, the device prepares a distress notification with GPS coordinates for designated contacts.
+              </p>
+              <div style="margin-top: 16px; font-size: 11px; font-family: var(--font-mono); color: var(--color-slate);">
+                PATH TBC (SIM VS BLE)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Browser Simulation Component Section -->
+    <section id="simulation" class="section" style="background-color: var(--color-navy-panel); border-block: 1px solid var(--color-navy-border);">
+      <div class="container">
+        <div class="section-head reveal center">
+          <span class="section-kicker">Interactive Demonstration</span>
+          <h2 class="section-title">Try the Rider-Check Demo</h2>
+          <p class="section-desc">
+            Experience how the 30-second response window functions in the browser. Zero network requests or emergency services are involved.
+          </p>
+        </div>
+
+        <!-- Simulation Box -->
+        <div class="sim-container reveal">
+          <!-- Persistent Warning Banner -->
+          <div class="sim-banner" role="alert">
+            <span aria-hidden="true">⚠</span>
+            <span>SIMULATION ONLY. NO REAL ALERTS ARE SENT</span>
+          </div>
+
+          <div class="sim-body">
+            <div class="sim-grid">
+              <!-- Dial Area -->
+              <div class="sim-dial-area">
+                <div class="sim-ring-wrapper" aria-hidden="true">
+                  <svg class="sim-ring-svg" viewBox="0 0 160 160">
+                    <circle class="sim-ring-bg" cx="80" cy="80" r="70" />
+                    <circle id="sim-ring-progress" class="sim-ring-progress" cx="80" cy="80" r="70" />
+                  </svg>
+                  <div class="sim-dial-center">
+                    <span id="sim-countdown-number" class="sim-countdown-number" aria-hidden="true">30</span>
+                    <span id="sim-countdown-label" class="sim-countdown-label">SECONDS (PROVISIONAL)</span>
+                  </div>
+                </div>
+
+                <div class="sim-controls">
+                  <button id="sim-btn-start" type="button" class="btn btn-primary">Start Simulated Trigger</button>
+                  <button id="sim-btn-cancel" type="button" class="btn btn-secondary" disabled>Cancel Alarm</button>
+                  <button id="sim-btn-reset" type="button" class="btn btn-secondary" disabled>Reset Demo</button>
+                </div>
+
+                <!-- Screen Reader Live Status -->
+                <div id="sim-live-region" class="sr-only" aria-live="polite">
+                  Simulation in standby. Press Start Simulated Trigger to begin.
+                </div>
+              </div>
+
+              <!-- Terminal Event Log -->
+              <div class="sim-log-window">
+                <div class="sim-log-header">
+                  <span>
+                    <span id="sim-status-dot" class="sim-log-status-dot idle"></span>
+                    <span id="sim-status-text">STANDBY</span>
+                  </span>
+                  <span>GARUDA / EVENT CONSOLE</span>
+                </div>
+                <div id="sim-log-feed" class="sim-log-feed" tabindex="0" role="log" aria-label="Simulation event log">
+                  <div class="sim-log-line dim">System ready. Press Start to simulate impact trigger.</div>
+                </div>
+                <div class="sim-log-footer">
+                  Illustrative sample, not a live alert · Demo coordinates shown
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testing Status Section (Strictly Honest: 5 Beta Riders, No Figures) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Honest Engineering Status</span>
+          <h2 class="section-title">Current Testing Status</h2>
+          <p class="section-desc">
+            We believe in honest, grounded engineering communication. Hardware reliability is built through road hours, not marketing claims.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 32px;">
+          <div class="card reveal reveal-delay-1">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-prototype">Prototype</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--color-slate);">STATUS</span>
+            </div>
+            <h3 class="card-title">Field Testing in Progress</h3>
+            <p class="card-desc">
+              Field testing with 5 beta riders is ongoing on real road conditions in Chhattisgarh. The focus of current testing is evaluating sensor thresholds, vibration filtering, and rider wearability under day-to-day conditions.
+            </p>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-tbc">To be confirmed</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--color-slate);">DATA DISCLOSURE</span>
+            </div>
+            <h3 class="card-title">No Test Results Published Yet</h3>
+            <p class="card-desc">
+              No formal numerical test results, false-alarm rates, or accuracy figures have been published yet. Data from field evaluations will be compiled and disclosed only after structured validation cohorts conclude.
+            </p>
+          </div>
+        </div>
+
+        <div class="card reveal" style="padding: 24px; background-color: var(--color-navy-panel); border-left: 3px solid var(--color-orange);">
+          <strong style="color: var(--color-off-white); font-size: 15px; display: block; margin-bottom: 6px;">
+            Participation in Future Cohorts
+          </strong>
+          <p style="margin: 0; font-size: 14px; color: var(--color-slate-light);">
+            Interested in riding with a future beta unit? Take the rider survey to be considered when evaluation cohorts expand.
+          </p>
+          <div style="margin-top: 16px;">
+            <a href="waitlist.html" class="btn btn-primary btn-sm">Take the rider survey →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Mandatory Safety Disclaimer Box -->
+      <div class="footer-disclaimer-box">
+        <p class="footer-disclaimer-text">
+          <strong>Safety Disclosure:</strong> Ride responsibly. Always wear a correctly fitted helmet. Accident detection and SOS features depend on sensor behaviour, power, GPS reception and communication availability; they cannot guarantee injury prevention or rescue.
+        </p>
+      </div>
+
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-brand-title">GARUDA · ANGIRAS INDUSTRIES</div>
+          <p class="footer-brand-text">
+            Smart rider safety hardware engineered in Bilaspur, Chhattisgarh. Built to bring you home.
+          </p>
+          <div style="margin-top: 8px;">
+            <span class="badge badge-tbc">Unincorporated Initiative</span>
+          </div>
+        </div>
+
+        <div class="footer-nav-grid">
+          <div class="footer-nav-group">
+            <h4>Technology</h4>
+            <ul>
+              <li><a href="products/garuda.html">Product Overview</a></li>
+              <li><a href="how-it-works.html">Incident Workflow</a></li>
+              <li><a href="how-it-works.html#simulation">Browser Simulation</a></li>
+              <li><a href="products/garuda.html#specs">Specifications</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-group">
+            <h4>Organisation</h4>
+            <ul>
+              <li><a href="about.html">About Angiras</a></li>
+              <li><a href="about.html#team">Leadership Team</a></li>
+              <li><a href="about.html#milestones">Milestones</a></li>
+              <li><a href="contact.html">Pilot Enquiries</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-group">
+            <h4>Engagement</h4>
+            <ul>
+              <li><a href="waitlist.html">Take the rider survey</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Angiras Industries. All rights reserved.
+        </div>
+        <div style="font-size: 12px; color: var(--color-slate);">
+          Patent application filed (No. 202521123556). Not yet granted.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/reveal.js" defer></script>
+  <script src="assets/js/workflow.js" defer></script>
+  <script src="assets/js/simulation.js" defer></script>
+</body>
+</html>

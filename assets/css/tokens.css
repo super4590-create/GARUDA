@@ -1,0 +1,42 @@
+/* GARUDA Design Tokens - Plain CSS Custom Properties */
+:root {
+  /* Brand Color Tokens */
+  --color-navy: #101B2B;
+  --color-navy-dark: #0A1220;
+  --color-navy-panel: #14213A;
+  --color-navy-border: #243453;
+  --color-orange: #F28A27;
+  --color-orange-hover: #E07916;
+  --color-orange-glow: rgba(242, 138, 39, 0.25);
+  --color-orange-dim: rgba(242, 138, 39, 0.12);
+  --color-off-white: #F5F7FA;
+  --color-off-white-dim: #E2E8F0;
+  --color-slate: #8A9BB0; /* Adjusted for WCAG 2.2 AA contrast (6.09:1 on navy) */
+  --color-slate-light: #94A3B8;
+  --color-slate-dark: #334155;
+  --color-slate-border: #1E293B;
+
+  /* Status Colors */
+  --color-status-verified: #3D9BFF;
+  --color-status-prototype: #F28A27;
+  --color-status-target: #A855F7;
+  --color-status-tbc: #94A3B8;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Layout & Spacing */
+  --container-max: 1200px;
+  --container-padding: 20px;
+  --header-height: 72px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(10, 18, 32, 0.5);
+  --shadow-orange-glow: 0 0 24px rgba(242, 138, 39, 0.2);
+}

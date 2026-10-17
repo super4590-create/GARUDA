@@ -1,0 +1,136 @@
+/* GARUDA Animations & Motion Design */
+@import url("tokens.css");
+
+/* ==========================================================================
+   Scroll Reveal (IntersectionObserver)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays for Grid Children */
+.reveal-delay-1 {
+  transition-delay: 100ms;
+}
+
+.reveal-delay-2 {
+  transition-delay: 200ms;
+}
+
+.reveal-delay-3 {
+  transition-delay: 300ms;
+}
+
+.reveal-delay-4 {
+  transition-delay: 400ms;
+}
+
+/* ==========================================================================
+   Ambient Engineering Geometry & Scanlines
+   ========================================================================== */
+.hud-grid {
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(61, 155, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 155, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hud-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 30%, transparent 40%, rgba(10, 18, 32, 0.8) 100%);
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(242, 138, 39, 0.6), transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+}
+
+/* Pause ambient loops when tab is hidden or paused */
+.paused .scan-line,
+body.tab-hidden .scan-line {
+  animation-play-state: paused !important;
+}
+
+/* Hero Sequential Headline Word Fade-Up */
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: wordFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-word:nth-child(1) { animation-delay: 100ms; }
+.hero-word:nth-child(2) { animation-delay: 200ms; }
+.hero-word:nth-child(3) { animation-delay: 300ms; }
+.hero-word:nth-child(4) { animation-delay: 400ms; }
+.hero-word:nth-child(5) { animation-delay: 500ms; }
+
+@keyframes wordFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Prefers-Reduced-Motion Overrides (Strict Accessibility)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .hero-word {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  
+  .scan-line {
+    display: none !important;
+    animation: none !important;
+  }
+  
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
