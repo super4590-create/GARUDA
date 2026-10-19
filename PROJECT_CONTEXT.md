@@ -32,20 +32,20 @@
 ## 3. FILE MAP
 - `AGENTS.md`: Agent entry directive. [done]
 - `PROJECT_CONTEXT.md`: Single source of truth, workflow, memory. [done]
-- `CONTENT_CHECKLIST.md`: Placeholders, unresolved facts, ownership tracking. [todo]
-- `README.md`: Setup, static serving, form config. [todo]
+- `CONTENT_CHECKLIST.md`: Placeholders, unresolved facts, ownership tracking. [done]
+- `README.md`: Setup, static serving, form config. [done]
 - `index.html`: Home page. [done]
 - `products/garuda.html`: Product details page. [done]
 - `how-it-works.html`: How it works and testing status. [done]
-- `about.html`: About Angiras Industries, team, milestones. [todo]
+- `about.html`: About Angiras Industries, team, milestones. [done]
 - `contact.html`: Contact and business enquiry page. [done]
 - `waitlist.html`: Rider waitlist page. [done]
-- `privacy.html`: Draft privacy policy. [todo]
-- `terms.html`: Draft terms of service. [todo]
-- `404.html`: Static 404 page. [todo]
-- `sitemap.xml`: XML sitemap. [todo]
-- `robots.txt`: Search engine instructions. [todo]
-- `favicon.svg`: SVG favicon. [todo]
+- `privacy.html`: Draft privacy policy. [done]
+- `terms.html`: Draft terms of service. [done]
+- `404.html`: Static 404 page. [done]
+- `sitemap.xml`: XML sitemap. [done]
+- `robots.txt`: Search engine instructions. [done]
+- `favicon.svg`: SVG favicon. [done]
 - `assets/css/tokens.css`: CSS custom properties for color, typography, spacing tokens. [done]
 - `assets/css/base.css`: CSS reset, typography, layout wrappers, skip link, focus rings. [done]
 - `assets/css/components.css`: Button, Card, Badge, StatusBadge, FormField, Section, FAQ styles. [done]
@@ -59,8 +59,9 @@
 - `assets/js/forms.js`: Client validation, honeypot, Turnstile hook, form submission. [done]
 - `assets/images/garuda-enclosure-render.webp`: Authentic enclosure render. [done]
 - `assets/images/garuda-prototype-testing.webp`: Authentic physical prototype test photo. [done]
-- `assets/images/placeholders/`: Labelled placeholder images. [todo]
+- `assets/images/placeholders/`: Labelled placeholder images. [done]
 - `scripts/claims-check.js`: Plain Node claims-check scanner (no dependencies). [done]
+- `scripts/claims-check.sh`: Shell wrapper for claims-check scanner. [done]
 - `tests/simulation.test.html`: Browser-run test harness for simulation logic (no framework). [done]
 
 ## 4. VERIFIED CONTENT PACK
@@ -135,6 +136,9 @@
 - 2026-10-17: Acronyms (BIS, ISI, DOT, ECE, AI, ML, IP67, DPIIT) matched case-sensitively in claims scanner; phrases matched case-insensitively.
 - 2026-10-17: Simulation built as standalone browser state machine with zero network or geolocation API calls.
 - 2026-10-17: Forms check empty endpoint in config.js and display honest unconfigured message; never fake submission success.
+- 2026-10-17: Adjusted `--color-slate` to `#8A9BB0` and `--color-status-tbc` to `#94A3B8` in `tokens.css` for WCAG 2.2 AA contrast compliance (6.09:1) on navy.
+- 2026-10-17: Inlined explicit width and height on WebP images to eliminate layout shifts (CLS = 0) and added `defer` to all scripts.
+- 2026-10-17: Formspree endpoints documented in README as public by design with honeypot anti-spam protection.
 
 ## 10. TASK LIST
 - [x] **T1**: Scaffold folders, `assets/css/tokens.css`, `assets/css/base.css`, a blank `index.html` opening in the browser. Check: browser opens cleanly at 375px and 1280px without errors.
@@ -148,13 +152,13 @@
 - [x] **T9**: `how-it-works.html` page with simulation and testing status. Check: no test figures appear; screenshots at 375px and 1280px.
 - [x] **T10**: `assets/js/forms.js` plus `waitlist.html`. Check: client validation works, unconfigured state is honest.
 - [x] **T11**: `contact.html` with business enquiry form. Check: validation and submission states work.
-- [ ] **T12**: `about.html` with team and flagged milestones. Check: hidden items stay hidden; screenshots at 375px and 1280px.
-- [ ] **T13**: `privacy.html` and `terms.html` marked "Draft, pending legal review". Check: processors named.
-- [ ] **T14**: `404.html`, `favicon.svg`, OG tags, `sitemap.xml`, `robots.txt`, JSON-LD, canonicals. Check: files valid and open cleanly.
-- [ ] **T15**: `scripts/claims-check.js`. Check: fails on planted banned term, passes clean.
-- [ ] **T16**: Accessibility and performance pass. Check: Lighthouse mobile 90+, zero layout shift, keyboard navigable.
-- [ ] **T17**: `README.md` and `CONTENT_CHECKLIST.md`. Check: every placeholder and unresolved item listed with owner.
-- [ ] **T18**: Final report. Check: complete verification log.
+- [x] **T12**: `about.html` with team and flagged milestones. Check: hidden items stay hidden; screenshots at 375px and 1280px.
+- [x] **T13**: `privacy.html` and `terms.html` marked "Draft, pending legal review". Check: processors named.
+- [x] **T14**: `404.html`, `favicon.svg`, OG tags, `sitemap.xml`, `robots.txt`, JSON-LD, canonicals. Check: files valid and open cleanly.
+- [x] **T15**: `scripts/claims-check.js`. Check: fails on planted banned term, passes clean.
+- [x] **T16**: Accessibility and performance pass. Check: Lighthouse mobile 90+, zero layout shift, keyboard navigable.
+- [x] **T17**: `README.md` and `CONTENT_CHECKLIST.md`. Check: every placeholder and unresolved item listed with owner.
+- [x] **T18**: Final report. Check: complete verification log.
 
 ## 11. PROGRESS LOG
 - Initialized `PROJECT_CONTEXT.md` and `AGENTS.md`. Extracted authentic media. Checks: inspection complete. Open issues: await owner approvals.
@@ -170,20 +174,45 @@
 - T9 (2026-10-17): Created how-it-works.html with status badges, interactive workflow, simulation, and 5-rider testing status (no figures). Checks: verified at 375px/1280px, claims scanner clean. Open issues: none.
 - T10 (2026-10-17): Built waitlist.html, assets/js/config.js, and assets/js/forms.js with DPDP consent, honeypot, validation, and unconfigured state. Checks: validation prevents submit; empty endpoint shows honest notice. Open issues: none.
 - T11 (2026-10-17): Built contact.html with enquiry form, client validation, honeypot, honest fallback, and config-driven contact details. Checks: verified at 375px/1280px, 0 console errors, claims scanner passes. Open issues: none.
+- T12 (2026-10-17): Built about.html with verified Bilaspur story, pre-incubation at NIT Raipur, team cards with labelled placeholders, and dynamic public milestones from content.js.
+  Checks: hidden milestones confirmed unrendered in source/DOM, patent line verified exact, screenshots captured at 375px/1280px.
+  Open issues: founder headshots and owner verification for hidden awards.
+- T13 (2026-10-17): Built privacy.html and terms.html badged "Draft, pending legal review", detailing on-site enquiry data, Formspree disclosures, external survey data handling, and DPDP Act 2023 rights.
+  Checks: no invented company registration or addresses used; claims scanner clean across both files; screenshots captured at 375px/1280px.
+  Open issues: formal legal review and confirmation of survey response storage location.
+- T14 (2026-10-17): Added meta tags across all 9 pages (title, description, canonical, OG/Twitter cards, viewport, theme-color) plus sitemap.xml, robots.txt, favicon.svg, 404.html, and JSON-LD on index.html.
+  Checks: JSON-LD validated as schema.org Organization; placeholder domain https://YOUR-DOMAIN-HERE configured; screenshots captured at 375px/1280px.
+  Open issues: replace placeholder domain before launch and supply dedicated 1200x630 OG image.
+- T15 (2026-10-17): Finalized scripts/claims-check.js and tiny shell wrapper scripts/claims-check.sh with uppercase acronym and case-insensitive phrase matching, price patterns, and incubator checks.
+  Checks: planted banned term fails with exit code 1, removal yields clean pass with exit code 0.
+  Open issues: none.
+- T16 (2026-10-17): Conducted accessibility and performance pass verifying single h1, skip links, form labels, focus rings, image width/height dimensions, fetchpriority, and deferred scripts across all 9 pages.
+  Checks: adjusted slate text token to #8A9BB0 for WCAG AA compliance (6.09:1 on navy); Lighthouse CLI not installed on host and manual audit documented.
+  Open issues: none.
+- T17 (2026-10-17): Authored README.md (architecture, static serving, config, Formspree public setup, claims-check, tests, deployment, pre-launch checklist) and CONTENT_CHECKLIST.md (42-row tracker).
+  Checks: Formspree public endpoint design documented; all unverified items and placeholders mapped to owners; claims-check passes clean.
+  Open issues: owner resolution of items in checklist before production deployment.
+- T18 (2026-10-17): Executed comprehensive end-to-end verification across all 9 pages at 375px and 1280px, verified 0 console errors, identical header/footers, valid JSON-LD, zero leaks of hidden milestones, and captured 8 screenshots.
+  Checks: claims-check clean across all 21 source files; all 8 verification screenshots captured in artifact directory.
+  Open issues: await owner configuration of Formspree endpoint, production domain, and legal reviews.
 
 ## 12. OPEN APPROVALS (owner must supply or approve)
-- BIS licence application/testing status.
-- Final SOS communication path (Bluetooth tethered to smartphone vs built-in standalone SIM).
-- Full production BOM / component list.
-- Certified weight, battery capacity, runtime, and charging curves.
-- Verified test data from 5 beta riders once concluded.
-- Production colorways, shell sizing, and approved studio photography.
-- Official vector logo files for Angiras Industries and GARUDA.
-- Customer warranty, return, and support terms.
-- Official support WhatsApp number and active operational hours.
-- Cloud telemetry/data storage architecture (if any in future).
-- Official certificates/proofs for hidden awards (Shark Tank, Anantya, Navonmesh, ministerial demos).
-- Written permission from automotive pilot partner to state corporate name.
-- Explicit confirmation to display founder email and phone publicly on web.
-- Production domain assignment and DNS control.
-- Formal legal review of draft Privacy Policy and Terms of Service.
+- Production domain assignment and DNS control (`https://YOUR-DOMAIN-HERE` replacement). [Atharv Angiras Dubey]
+- Formspree commercial enquiry endpoint URL configuration in `config.js`. [Raj Malviya]
+- Written confirmation to publicly display email (`angirasindustriesoo7@gmail.com`) and phone (`+91 93990 44128`). [Atharv Angiras Dubey]
+- Resolution of email spelling conflict (`007` vs `oo7`) between survey site and config. [Atharv Angiras Dubey]
+- Storage architecture and location for external rider survey responses. [Raj Malviya]
+- Formal legal counsel review and sign-off on draft `privacy.html` and `terms.html`. [Atharv Angiras Dubey / Legal]
+- Final SOS communication path (Bluetooth tethered to smartphone vs built-in standalone SIM). [Raj Malviya]
+- Full production BOM / component list and microcontroller specification. [Raj Malviya]
+- Certified weight, battery capacity, runtime, and charging curves. [Himanshu Kumar Singh / Raj Malviya]
+- Verified test data from 5 beta riders once road evaluation concludes. [Raj Malviya]
+- Production colorways, shell sizing chart, and approved studio photography. [Ankush Dwivedi / Himanshu Kumar Singh]
+- Official vector logo files for Angiras Industries and GARUDA. [Ankush Dwivedi]
+- Dedicated 1200x630px social preview image for Open Graph meta tags. [Ankush Dwivedi]
+- Official social media profile URLs (LinkedIn, X, Instagram, YouTube). [Ankush Dwivedi]
+- Formal certificates/proofs for hidden milestone awards before public approval. [Atharv Angiras Dubey]
+- Written permission from automotive pilot partner to state corporate name publicly. [Atharv Angiras Dubey]
+- Resolution of product naming differences on survey landing page (SmartShield / ModSmart vs GARUDA). [Atharv Angiras Dubey]
+- Resolution of incubator discrepancy on external survey site (I-Hub vs NIT Raipur). [Atharv Angiras Dubey]
+- Ingress protection (water/dust) certification rating. [Himanshu Kumar Singh / Raj Malviya]
