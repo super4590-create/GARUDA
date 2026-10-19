@@ -63,6 +63,7 @@
 - `scripts/claims-check.js`: Plain Node claims-check scanner (no dependencies). [done]
 - `scripts/claims-check.sh`: Shell wrapper for claims-check scanner. [done]
 - `tests/simulation.test.html`: Browser-run test harness for simulation logic (no framework). [done]
+- `vercel.json`: Vercel static deployment config (clean URLs, caching, security headers). [done]
 
 ## 4. VERIFIED CONTENT PACK
 - **Company**: Angiras Industries, Bilaspur, Chhattisgarh. Pre-incubated at NIT Raipur Incubation Centre (NIT Raipur, NOT I-Hub GEC Raipur). Not incorporated: never describe as a registered company, Pvt Ltd, DPIIT, or Startup India recognised.
@@ -195,6 +196,9 @@
 - T18 (2026-10-17): Executed comprehensive end-to-end verification across all 9 pages at 375px and 1280px, verified 0 console errors, identical header/footers, valid JSON-LD, zero leaks of hidden milestones, and captured 8 screenshots.
   Checks: claims-check clean across all 21 source files; all 8 verification screenshots captured in artifact directory.
   Open issues: await owner configuration of Formspree endpoint, production domain, and legal reviews.
+- Vercel Prep (2026-10-19): Cleaned up redundant extracted_assets/ and public/ directories, added vercel.json with cleanUrls and security/caching headers, updated .gitignore with .vercel, and verified claims scanner.
+  Checks: claims-check clean across all source files; git working tree ready.
+  Open issues: none.
 
 ## 12. OPEN APPROVALS (owner must supply or approve)
 - Production domain assignment and DNS control (`https://YOUR-DOMAIN-HERE` replacement). [Atharv Angiras Dubey]

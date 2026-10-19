@@ -53,7 +53,7 @@ const BANNED_PATTERNS = [
 ];
 
 const SCAN_EXTENSIONS = ['.html', '.css', '.js'];
-const IGNORED_DIRS = ['.git', 'node_modules', 'extracted_assets'];
+const IGNORED_DIRS = ['.git', 'node_modules', '.vercel'];
 const IGNORED_FILES = ['claims-check.js'];
 
 function scanDirectory(dir, fileList = []) {

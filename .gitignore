@@ -9,3 +9,6 @@ $RECYCLE.BIN/
 .idea/
 *.swp
 *.swo
+
+# Vercel
+.vercel/
