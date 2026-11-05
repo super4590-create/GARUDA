@@ -49,7 +49,7 @@
 - `assets/css/tokens.css`: CSS custom properties for color, typography, spacing tokens. [done]
 - `assets/css/base.css`: CSS reset, typography, layout wrappers, skip link, focus rings. [done]
 - `assets/css/components.css`: Button, Card, Badge, StatusBadge, FormField, Section, FAQ styles. [done]
-- `assets/css/animations.css`: HUD grid, scanline, pulse, reveal styles, prefers-reduced-motion overrides. [done]
+- `assets/css/animations.css`: HUD grid, pulse, reveal styles, prefers-reduced-motion overrides. [done]
 - `assets/js/config.js`: Form endpoints, early-bird flag, contact details. [done]
 - `assets/js/content.js`: Verified content pack with status and approvedForPublic flags. [done]
 - `assets/js/main.js`: Navigation, sticky header shrink, mobile menu toggle. [done]
@@ -199,6 +199,7 @@
 - Vercel Prep (2026-10-19): Cleaned up redundant extracted_assets/ and public/ directories, added vercel.json with cleanUrls and security/caching headers, updated .gitignore with .vercel, and verified claims scanner.
   Checks: claims-check clean across all source files; git working tree ready.
   Open issues: none.
+- 2026-11-05: Removed hero scan-line (markup in `index.html`, CSS/keyframes in `animations.css`). claims-check passes. Open issues: none.
 
 ## 12. OPEN APPROVALS (owner must supply or approve)
 - Production domain assignment and DNS control (`https://YOUR-DOMAIN-HERE` replacement). [Atharv Angiras Dubey]
