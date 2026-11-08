@@ -37,7 +37,7 @@ GAruda/
 ├── README.md                         # Documentation & deployment guide
 ├── assets/
 │   ├── css/
-│   │   ├── animations.css            # HUD grids, scanlines & reduced-motion rules
+│   │   ├── animations.css            # HUD grids & reduced-motion rules
 │   │   ├── base.css                  # CSS reset, typography, skip link & focus rings
 │   │   ├── components.css            # Buttons, cards, badges, status badges, forms, FAQ
 │   │   └── tokens.css                # Color, typography & spacing custom properties
